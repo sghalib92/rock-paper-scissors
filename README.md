@@ -1,0 +1,1 @@
+A game of Rock Paper Scissors played from the browser console.
