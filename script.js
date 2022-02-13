@@ -1,7 +1,5 @@
 function computerPlay() {
   let randomNumber = Math.random() * 10 ;
-  
-  console.log(randomNumber);
 
   if (randomNumber < 3.33) {
       return "Rock";
@@ -12,7 +10,34 @@ function computerPlay() {
   }
 }
 
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "Rock" && computerSelection === "Scissor") {
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
 
-console.log(computerPlay());
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+
+    } else if (playerSelection === "Paper" && computerSelection === "Scissor") {
+
+        return `You lose! ${computerSelection} beats ${playerSelection}.`
+
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
+    } else if (playerSelection === "Scissor" && computerSelection === "Paper") {
+        
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
+    } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
+
+        return `You lose! ${computerSelection} beats ${playerSelection}.`
+    } else if (playerSelection === computerSelection) {
+
+        return `It's a tie!`;
+    }
+}
+
+
+console.log(playRound('Rock', computerPlay()));
 
 
