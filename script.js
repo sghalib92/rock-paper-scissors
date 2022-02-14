@@ -51,7 +51,9 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Rock Paper Scissors shoot!");
 
-        if ( (playerSelection.toLowerCase() === "rock" || playerSelection.toLowerCase() === "paper" || playerSelection.toLowerCase() === 'scissor')) {
+        // We have to make sure that the initial input is not null, otherwise when we use the String method tolowerCase(), it will result in a TypeError. Pressing Enter on the prompt returns an empty string, so there isn't an issue with the toLowerCase() method as it will just compare the empty "" string to one of the operands.
+
+        if (playerSelection !== null && (playerSelection.toLowerCase() === "rock" || playerSelection.toLowerCase() === "paper" || playerSelection.toLowerCase() === 'scissor')) {
 
             playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
             
@@ -66,7 +68,6 @@ function game() {
         } else {
             i--
         }
-
     }
 
     return (score > 0) ? "Player wins!" :
