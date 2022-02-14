@@ -13,7 +13,7 @@ function computerPlay() {
 
 /*  Function plays a single round of Rock Paper Scissors,
     it accepts two arguments, and returns a string
-    indicating the winner or loser based on comparisons.
+    indicating the winner or loser based on the conditionals.
 */
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissor") {
@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-/* game() function calls playRound 5 times with two arguments, a player input received via prompt and the return value of the call to the computerPlay() function. Returns a string declaring winner, loser or tie.
+/* game() function calls playRound 5 times with two arguments, a player input received via prompt and the return value of the call to the computerPlay() function. The function returns a string declaring each rounds winner and the overall winner.
 */
 
 function game() {
@@ -51,7 +51,7 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Rock Paper Scissors shoot!");
 
-        // We have to make sure that the initial input is not null, otherwise when we use the String method tolowerCase(), it will result in a TypeError. Pressing Enter on the prompt returns an empty string, so there isn't an issue with the toLowerCase() method as it will just compare the empty "" string to one of the operands.
+        // playerSelection cannot be null, otherwise when we use the String method tolowerCase() on it, it will result in a TypeError. Pressing Enter on the prompt returns an empty string, so there no issue with the toLowerCase() method as it will just compare the empty "" string to one of the operands.
 
         if (playerSelection !== null && (playerSelection.toLowerCase() === "rock" || playerSelection.toLowerCase() === "paper" || playerSelection.toLowerCase() === 'scissor')) {
 
